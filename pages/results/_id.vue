@@ -1,17 +1,19 @@
 <template class="search-results">
-  <v-layout row wrap>
-    <v-flex>
-      <h1>Recipes using {{$route.params.id}}</h1>
-      <div v-for="(recipe) in this.$store.state.recipes">
-        <Card
-          :name="recipe.label"
-          :image="recipe.image"
-          :ingredients="recipe.ingredients"
-          :url="recipe.url"
-        />
-      </div>
-    </v-flex>
-  </v-layout>
+  <v-container grid-list-lg>
+    <v-layout row wrap>
+      <v-flex>
+        <h1>Recipes using {{$route.params.id}}</h1>
+        <div v-for="(recipe) in this.$store.state.recipes">
+          <Card
+            :name="recipe.label"
+            :image="recipe.image"
+            :ingredients="recipe.ingredients"
+            :url="recipe.url"
+          />
+        </div>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
@@ -26,7 +28,7 @@ export default {
   components: {
     Card
   },
-  layout: '_id',
+  layout: 'results',
   async fetch({ params, store }) {
     const ingredients = params.id.split(' ')
     const apiURL = 'https://api.edamam.com/search?q='

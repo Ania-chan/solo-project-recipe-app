@@ -22,6 +22,6 @@ export default {
   height: 100%;
 }
 .text-xs-center {
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.65);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.85);
 }
 </style>

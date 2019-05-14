@@ -10,6 +10,9 @@
       <input placeholder="Diet" autofocus>
       <br>
       <input placeholder="Dish type" autofocus>-->
+      <div class="text-xs-center">
+        <v-btn round color="#C2185B" dark large>Rounded Button</v-btn>
+      </div>
     </form>
   </div>
 </template>
@@ -25,6 +28,7 @@ export default {
       search: ''
     }
   },
+  layout: 'default',
   methods: {
     submit(event) {
       this.$router.push(`results/${this.search}`)

@@ -51,7 +51,7 @@ export default {
           to: '/'
         },
         {
-          icon: 'bubble_chart',
+          icon: 'search',
           title: 'Search Recipes',
           to: '/search'
         }
