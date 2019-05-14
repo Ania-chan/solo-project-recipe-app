@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="search-form">
     <h1>Search Recipes</h1>
     <br>
     <form @submit.prevent="submit">
@@ -34,6 +34,11 @@ export default {
 </script>
 
 <style>
+.search-form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+}
 input {
   width: 400px;
   padding: 10px;

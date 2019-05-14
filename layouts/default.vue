@@ -21,12 +21,11 @@
     </v-navigation-drawer>
     <v-toolbar color="#C2185B" dark fixed app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>My Recipe App</v-toolbar-title>
     </v-toolbar>
     <v-content>
-      <v-container fluid fill-height>
-        <v-layout justify-center align-center>
-          <v-flex text-xs-center>
+      <v-container fluid fill-height class="home-hero">
+        <v-layout justify-center align-center column pa-5>
+          <v-flex>
             <nuxt/>
           </v-flex>
         </v-layout>
