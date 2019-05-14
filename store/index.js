@@ -3,7 +3,7 @@ export const state = () => ({
 })
 
 export const mutations = {
-  addRecipes(recipes, state) {
+  addRecipes: function(state, recipes) {
     state.recipes = recipes
   }
 }

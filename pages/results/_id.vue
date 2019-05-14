@@ -1,33 +1,26 @@
 <template>
   <div>
     <h1>Recipes using {{$route.params.id}}</h1>
-    <div v-for="(recipe, index) in this.recipes">
-      <Card
-        :title="album.collectionCensoredName"
-        :image="album.artworkUrl100"
-        :artistName="album.artistName"
-        :url="album.artistViewUrl"
-        :color="picker(index)"
-      />
+    <div v-for="(recipe) in this.$store.state.recipes">
+      <Card :name="recipe.label" :image="recipe.image"/>
+      <!-- <ul>
+      <li v-for="ingredient in recipe.ingredients">{{ingredient.text}}</li>-->
+      <!-- </ul> -->
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import Card from '~/components/Card.vue'
 export default {
   data() {
     return {
-      search: '',
-      recipes: []
+      search: ''
     }
   },
   components: {
-    // Card
-  },
-  mounted() {
-    // console.log(this.$store.state)
-    // fetchRecipes('zucchini', 'broccoli', 'carrots')
+    Card
   },
   async fetch({ params, store }) {
     const ingredients = params.id.split(' ')
@@ -46,12 +39,13 @@ export default {
       })
       .join('')
     const url = `${apiURL}${mappedIngreds}${maxIngreds}${maxTime}${apiId}${apiKey}`
-    console.log(url)
     const res = await axios.get(url)
     const recipes = res.data.hits.map(recipe => {
       return recipe.recipe
     })
     this.recipes = recipes
+    // console.log(this.recipes)
+    store.commit('addRecipes', recipes)
   }
 }
 </script>
