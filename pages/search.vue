@@ -4,12 +4,12 @@
     <br>
     <form @submit.prevent="submit">
       <input placeholder="Ingredients" v-model="search" autofocus>
+      <!-- <br>
+      <input placeholder="Cuisine type" autofocus>
       <br>
-      <input placeholder="Cuisine type" v-model="search" autofocus>
+      <input placeholder="Diet" autofocus>
       <br>
-      <input placeholder="Diet" v-model="search" autofocus>
-      <br>
-      <input placeholder="Dish type" v-model="search" autofocus>
+      <input placeholder="Dish type" autofocus>-->
     </form>
   </div>
 </template>

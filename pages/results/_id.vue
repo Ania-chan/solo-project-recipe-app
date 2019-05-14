@@ -1,4 +1,4 @@
-<template>
+<template class="search-results">
   <v-layout row wrap>
     <v-flex>
       <h1>Recipes using {{$route.params.id}}</h1>
@@ -26,6 +26,7 @@ export default {
   components: {
     Card
   },
+  layout: '_id',
   async fetch({ params, store }) {
     const ingredients = params.id.split(' ')
     const apiURL = 'https://api.edamam.com/search?q='
@@ -52,3 +53,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.search-results {
+  background-color: white;
+}
+</style>
