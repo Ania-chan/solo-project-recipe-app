@@ -1,6 +1,13 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed app>
+    <v-navigation-drawer
+      v-model="drawer"
+      :mini-variant="miniVariant"
+      :clipped="clipped"
+      fixed
+      app
+      temporary
+    >
       <v-list>
         <v-list-tile v-for="(item, i) in items" :key="i" :to="item.to" router exact>
           <v-list-tile-action>
@@ -26,7 +33,7 @@
       </v-container>
     </v-content>
     <v-footer color="#880E4F" app>
-      <span class="white--text">&copy; 2019</span>
+      <span class="white--text">Ania Nakayama &copy; 2019</span>
     </v-footer>
   </v-app>
 </template>
@@ -43,11 +50,6 @@ export default {
           icon: 'apps',
           title: 'Welcome',
           to: '/'
-        },
-        {
-          icon: 'bubble_chart',
-          title: 'All Recipes',
-          to: '/list'
         },
         {
           icon: 'bubble_chart',

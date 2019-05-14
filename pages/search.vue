@@ -3,7 +3,13 @@
     <h1>Search Recipes</h1>
     <br>
     <form @submit.prevent="submit">
-      <input placeholder="Enter ingredients" v-model="search" autofocus>
+      <input placeholder="Ingredients" v-model="search" autofocus>
+      <br>
+      <input placeholder="Cuisine type" v-model="search" autofocus>
+      <br>
+      <input placeholder="Diet" v-model="search" autofocus>
+      <br>
+      <input placeholder="Dish type" v-model="search" autofocus>
     </form>
   </div>
 </template>
@@ -23,9 +29,13 @@ export default {
     submit(event) {
       this.$router.push(`results/${this.search}`)
     }
-  },
-  mounted() {
-    // fetchRecipes('zucchini', 'broccoli', 'carrots')
   }
 }
 </script>
+
+<style>
+input {
+  width: 400px;
+  padding: 10px;
+}
+</style>

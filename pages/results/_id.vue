@@ -1,13 +1,17 @@
 <template>
-  <div>
-    <h1>Recipes using {{$route.params.id}}</h1>
-    <div v-for="(recipe) in this.$store.state.recipes">
-      <Card :name="recipe.label" :image="recipe.image"/>
-      <!-- <ul>
-      <li v-for="ingredient in recipe.ingredients">{{ingredient.text}}</li>-->
-      <!-- </ul> -->
-    </div>
-  </div>
+  <v-layout row wrap>
+    <v-flex>
+      <h1>Recipes using {{$route.params.id}}</h1>
+      <div v-for="(recipe) in this.$store.state.recipes">
+        <Card
+          :name="recipe.label"
+          :image="recipe.image"
+          :ingredients="recipe.ingredients"
+          :url="recipe.url"
+        />
+      </div>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>
@@ -44,7 +48,6 @@ export default {
       return recipe.recipe
     })
     this.recipes = recipes
-    // console.log(this.recipes)
     store.commit('addRecipes', recipes)
   }
 }
