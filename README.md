@@ -1,8 +1,11 @@
-# recipe-app
+![Screenshot](top-page.png)
 
-This was created during my time as a student at Code Chrysalis.
+# Recipe Inspiration App
 
-## Build Setup
+This was created during my time as a student at Code Chrysalis as a two-days solo project.
+It's a single page app build in Nuxt.js Vuetify.js that allows you to search for recipes by ingredients, health-issues and diet.
+
+## Installation
 
 ```bash
 # install dependencies
@@ -20,3 +23,7 @@ $ yarn run generate
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
