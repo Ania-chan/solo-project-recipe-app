@@ -5,11 +5,13 @@
     <form @submit.prevent="submit">
       <input placeholder="Ingredients" v-model="ingredients" autofocus required>
       <br>
-      <input placeholder="Health issue" v-model="health" autofocus>
       <br>
-      <input placeholder="Diet" v-model="diet" autofocus>
-      <h5>One of “balanced”, “high-protein”, “high-fiber”, “low-fat”, “low-carb”, “low-sodium”</h5>
-      <br>
+      <v-flex xs12 sm6 d-flex>
+        <v-select v-model="health" :items="items" label="Health issues"></v-select>
+      </v-flex>
+      <v-flex xs12 sm6 d-flex>
+        <v-select v-model="diet" :items="dietItems" label="Diet"></v-select>
+      </v-flex>
       <div class="text-xs-center">
         <v-btn type="submit" round color="#C2185B" dark large>Search</v-btn>
       </div>
@@ -28,7 +30,16 @@ export default {
     return {
       ingredients: '',
       diet: '',
-      health: ''
+      health: '',
+      items: [
+        'alcohol-free',
+        'peanut-free',
+        'sugar-conscious',
+        'tree-nut-free',
+        'vegan',
+        'vegetarian'
+      ],
+      dietItems: ['balanced', 'high-protein', 'low-fat', 'low-carb']
     }
   },
   layout: 'default',

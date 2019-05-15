@@ -24,7 +24,7 @@
     </v-toolbar>
     <v-content>
       <v-container fluid fill-height>
-        <v-layout justify-center align-center column pa-5>
+        <v-layout justify-center align-center column>
           <v-flex>
             <nuxt/>
           </v-flex>

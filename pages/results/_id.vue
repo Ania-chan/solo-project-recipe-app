@@ -1,9 +1,9 @@
 <template class="search-results">
   <v-container grid-list-lg>
-    <v-layout row wrap>
-      <v-flex>
+    <v-layout align-items-center>
+      <v-flex md-3>
         <h1>Recipes using {{$route.params.id}}</h1>
-        <div v-for="(recipe) in this.$store.state.recipes">
+        <div v-for="(recipe) in this.$store.state.recipes" :key="recipe.url">
           <Card
             :name="recipe.label"
             :image="recipe.image"
@@ -26,7 +26,8 @@ export default {
   layout: 'results',
   async fetch({ params, store }) {
     const ingredients = params.id.split(' ')
-    const apiURL = 'https://api.edamam.com/search?q='
+    const apiURL =
+      'https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?q='
     const apiKey = '&app_key=40348d9b45407e7ebc14e1d80c816667'
     const apiId = '&app_id=e5e87a1b'
     const maxIngreds = `&ingr=10`

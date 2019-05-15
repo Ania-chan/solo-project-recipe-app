@@ -1,7 +1,7 @@
 <template>
   <v-container fluid style="min-height: 0;">
     <v-layout align-items-center jsutify-content-center row wrap>
-      <v-flex>
+      <v-flex xs12>
         <v-card target="_blank" :href="url" style="max-width: 400px; margin: auto;">
           <v-img :src="image" aspect-ratio="2.75"></v-img>
 
