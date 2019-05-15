@@ -20,11 +20,6 @@
 import axios from 'axios'
 import Card from '~/components/Card.vue'
 export default {
-  data() {
-    return {
-      search: ''
-    }
-  },
   components: {
     Card
   },
@@ -34,7 +29,6 @@ export default {
     const apiURL = 'https://api.edamam.com/search?q='
     const apiKey = '&app_key=40348d9b45407e7ebc14e1d80c816667'
     const apiId = '&app_id=e5e87a1b'
-    const maxTime = '&time=30'
     const maxIngreds = `&ingr=10`
     const mappedIngreds = ingredients
       .map((ingredient, idx) => {
@@ -45,7 +39,10 @@ export default {
         }
       })
       .join('')
-    const url = `${apiURL}${mappedIngreds}${maxIngreds}${maxTime}${apiId}${apiKey}`
+    const url = `${apiURL}${mappedIngreds}${
+      store.state.queryString
+    }${maxIngreds}${apiId}${apiKey}`
+    console.log(url)
     const res = await axios.get(url)
     const recipes = res.data.hits.map(recipe => {
       return recipe.recipe
