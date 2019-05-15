@@ -3,7 +3,7 @@
 # Recipe Inspiration App
 
 This was created during my time as a student at Code Chrysalis as a two-days solo project.
-It's a single page app build in Nuxt.js Vuetify.js that allows you to search for recipes by ingredients, health-issues and diet.
+It's a single page app build in Nuxt.js and Vuetify.js that allows you to search for recipes by ingredients, health-issues and diet type.
 
 ## Installation
 
