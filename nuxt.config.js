@@ -46,7 +46,8 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
+    '@nuxtjs/proxy'
   ],
   vuetify: {
     //  theme: { }
@@ -56,6 +57,17 @@ export default {
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseURL: 'https://api.edamam.com',
+    proxyHeaders: false,
+    credentials: false
+  },
+  proxy: {
+    '/api': {
+      target: 'https://api.edamam.com',
+      pathRewrite: {
+        '^/api': '/'
+      }
+    }
   },
 
   /*

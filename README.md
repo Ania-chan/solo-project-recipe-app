@@ -1,10 +1,10 @@
 # recipe-app
 
-> My delightful Nuxt.js project
+This was created during my time as a student at Code Chrysalis.
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ yarn install
 

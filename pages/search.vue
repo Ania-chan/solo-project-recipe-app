@@ -5,15 +5,13 @@
     <form @submit.prevent="submit">
       <input placeholder="Ingredients" v-model="ingredients" autofocus required>
       <br>
-      <input placeholder="Cuisine type" v-model="cuisine" autofocus>
-      <br>
-      <input placeholder="Dish type" v-model="dish" autofocus>
+      <input placeholder="Health issue" v-model="health" autofocus>
       <br>
       <input placeholder="Diet" v-model="diet" autofocus>
       <h5>One of “balanced”, “high-protein”, “high-fiber”, “low-fat”, “low-carb”, “low-sodium”</h5>
       <br>
       <div class="text-xs-center">
-        <v-btn type="submit" round color="#C2185B" dark large>Rounded Button</v-btn>
+        <v-btn type="submit" round color="#C2185B" dark large>Search</v-btn>
       </div>
     </form>
   </div>
@@ -29,18 +27,16 @@ export default {
   data() {
     return {
       ingredients: '',
-      cuisine: '',
       diet: '',
-      dish: ''
+      health: ''
     }
   },
   layout: 'default',
   methods: {
     submit(event) {
       const params = {
-        cuisineType: this.cuisine,
-        health: this.diet,
-        dishType: this.dish
+        diet: this.diet,
+        health: this.health
       }
       this.$store.commit('setParams', params)
       this.$router.push(`results/${this.ingredients}`)

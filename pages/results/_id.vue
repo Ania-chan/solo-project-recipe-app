@@ -39,11 +39,15 @@ export default {
         }
       })
       .join('')
-    const url = `${apiURL}${mappedIngreds}${
+    const url = `${apiURL}${mappedIngreds}${maxIngreds}${apiId}${apiKey}${
       store.state.queryString
-    }${maxIngreds}${apiId}${apiKey}`
+    }`
     console.log(url)
-    const res = await axios.get(url)
+    const res = await axios.get(url, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
     const recipes = res.data.hits.map(recipe => {
       return recipe.recipe
     })
