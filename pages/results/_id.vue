@@ -28,8 +28,8 @@ export default {
     const ingredients = params.id.split(' ')
     const apiURL =
       'https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?q='
-    const apiKey = process.env.APIkey
-    const apiId = process.env.APIid
+    const apiKey = process.env.RECIPE_API_KEY
+    const apiId = process.env.RECIPE_API_ID
     const maxIngreds = `&ingr=10`
     const mappedIngreds = ingredients
       .map((ingredient, idx) => {

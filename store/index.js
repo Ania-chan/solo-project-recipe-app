@@ -14,6 +14,5 @@ export const mutations = {
         state.queryString += `&${query}=${params[query]}`
       }
     }
-    console.log(state.queryString)
   }
 }
