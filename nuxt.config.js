@@ -2,7 +2,7 @@ import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 import pkg from './package'
 
 require('dotenv').config()
-const { RECIPE_API_KEY, RECIPE_API_ID } = process.env
+const { API_KEY, API_ID } = process.env
 
 export default {
   mode: 'spa',
@@ -74,8 +74,8 @@ export default {
     }
   },
   env: {
-    RECIPE_API_KEY,
-    RECIPE_API_ID
+    API_KEY,
+    API_ID
   },
   /*
    ** Build configuration

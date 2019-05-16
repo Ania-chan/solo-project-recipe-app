@@ -22,6 +22,9 @@ $ yarn start
 $ yarn run generate
 ```
 
+You can get your API key and id [here](https://developer.edamam.com/edamam-recipe-api).
+Save them in .env file as API_KEY and API_ID.
+
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
 
 ## License
