@@ -28,8 +28,8 @@ export default {
     const ingredients = params.id.split(' ')
     const apiURL =
       'https://cors-anywhere.herokuapp.com/https://api.edamam.com/search?q='
-    const apiKey = '&app_key=40348d9b45407e7ebc14e1d80c816667'
-    const apiId = '&app_id=e5e87a1b'
+    const apiKey = process.env.APIkey
+    const apiId = process.env.APIid
     const maxIngreds = `&ingr=10`
     const mappedIngreds = ingredients
       .map((ingredient, idx) => {
@@ -43,7 +43,6 @@ export default {
     const url = `${apiURL}${mappedIngreds}${maxIngreds}${apiId}${apiKey}${
       store.state.queryString
     }`
-    console.log(url)
     const res = await axios.get(url, {
       headers: {
         'Content-Type': 'application/json'

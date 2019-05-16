@@ -47,7 +47,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/vuetify',
-    '@nuxtjs/proxy'
+    '@nuxtjs/proxy',
+    '@nuxtjs/dotenv'
   ],
   vuetify: {
     //  theme: { }
@@ -69,7 +70,10 @@ export default {
       }
     }
   },
-
+  env: {
+    APIkey: '&app_key=40348d9b45407e7ebc14e1d80c816667',
+    APIid: '&app_id=e5e87a1b'
+  },
   /*
    ** Build configuration
    */
